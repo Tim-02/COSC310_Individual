@@ -1,15 +1,50 @@
 package assignment2;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 
+//new package imported that allows for Regular Expressions
+import java.util.regex.*;
+
 public class ChatBot {
+	
+	//hash map "rules" containing tuples of (keywords, response)
+	//notice that for multiple keywords stored in ArrayList, bot has one response
+	private HashMap<ArrayList<String>, String> rules = new HashMap<ArrayList<String>, String>();
+	
+	public ChatBot() {
+		//initializing rules with one tuple
+		// TODO: find a better way to get new entries here (maybe from json file?)
+		ArrayList<String> temp = new ArrayList<String>(Arrays.asList("hi", "hello", "sup", "what's up", "hey"));
+		
+		rules.put(temp, "Hi, welcome to GymBot! How can I help you?");
+	}
+	
 	 /*
      * takes String outputs "intelligent" answer
      */
-    public String getResponse(String s){
+    public String getResponse(String input){
         String response = "";
-        s.toLowerCase();
-        HashSet<String> words = StringtoSet(s);
+        
+        //loop through all possible responses
+        for(ArrayList<String> keywords : rules.keySet()) {
+        	//build a keyword pattern for each response (regex standard)
+        	String pattern_str = String.join("\\b|\\b", keywords);
+        	pattern_str = String.format("\\b%s\\b", pattern_str);
+        	
+        	//match with input
+        	boolean isMatch = Pattern.matches(pattern_str, input.toLowerCase());
+        	
+        	if(isMatch) {
+        		//return the response accessed from hash map
+        		return rules.get(keywords);
+        	}
+        }
+        
+        
+        /*HashSet<String> words = StringtoSet(s);
         if(words.contains("what")) {
             if(words.contains("time")) {
                 if(words.contains("open")) {
@@ -25,7 +60,8 @@ public class ChatBot {
                 }
             }
             
-        }
+        */
+        
         return response;   
     }
     /*
