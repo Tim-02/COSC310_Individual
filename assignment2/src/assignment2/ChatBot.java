@@ -1,3 +1,5 @@
+package assignment2;
+
 import java.util.HashSet;
 
 public class ChatBot {
@@ -15,13 +17,14 @@ public class ChatBot {
                 }else if(words.contains("close")) { 
                     response = "We close at 11:00 PM";
                 }
-            }else {
-            	else if(words.contains("trainer")) {
+            }else { 
+            	if(words.contains("trainer")) {
             		response = "Our trainers include rich piana and sylvester Stallone";
                 }else if(words.contains("equipment")){
                 	response = "Squat Rack, and Bench press... what else would you need?";
                 }
             }
+            
         }
         return response;   
     }
