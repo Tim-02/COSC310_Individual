@@ -19,7 +19,11 @@ public class ChatBot {
 		// TODO: find a better way to get new entries here (maybe from json file?)
 		ArrayList<String> temp = new ArrayList<String>(Arrays.asList("hi", "hello", "sup", "what's up", "hey"));
 		
+		
 		rules.put(temp, "Hi, welcome to GymBot! How can I help you?");
+		
+		temp = new ArrayList<String>(Arrays.asList("time", "timing", "hours", "days", "open", "opened", "openning", "opens", "close", "closed", "closes", "closing"));
+		rules.put(temp, "Are you interested in working hours? The Gym is open from 5:00 am to 10 pm.");
 	}
 	
 	 /*
@@ -33,12 +37,13 @@ public class ChatBot {
         	//build a keyword pattern for each response (regex standard)
         	String pattern_str = String.join("\\b|\\b", keywords);
         	pattern_str = String.format("\\b%s\\b", pattern_str);
+        	Pattern pattern = Pattern.compile(pattern_str, Pattern.CASE_INSENSITIVE);
         	
         	//match with input
-        	boolean isMatch = Pattern.matches(pattern_str, input.toLowerCase());
+        	Matcher matcher = pattern.matcher(input);
         	
-        	if(isMatch) {
-        		//return the response accessed from hash map
+        	while(matcher.find()) {
+        		//if match found, return respective response from rules
         		return rules.get(keywords);
         	}
         }
