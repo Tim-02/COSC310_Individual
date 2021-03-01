@@ -43,7 +43,10 @@ public class Contents extends JLabel{
 		scroller.setBounds(w/4, h/8, 2*w/4, 2*h/4);
 		
 		JButton button = new JButton("ASK!");
-		button.addActionListener(e -> {output.askQuestion(input.getText());});
+		button.addActionListener(e -> {
+			output.askQuestion(input.getText());
+			input.setText("");
+		});
 		button.setFont(f);
 		button.setSize(100, 100);
 		button.setBounds(3*w/4 + 10, 3*h/4, 100, 100);
