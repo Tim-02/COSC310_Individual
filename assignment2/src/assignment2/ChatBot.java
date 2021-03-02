@@ -15,7 +15,7 @@ public class ChatBot {
                 if(words.contains("open")) {
                     response = "We open at 5:00 AM";
                 }else if(words.contains("close")) { 
-                    response = "We close at 11:00 PM";
+                    response = "We close at 11:00 PMWe close at 11:00 PM";
                 }
             }else { 
             	if(words.contains("trainer")) {

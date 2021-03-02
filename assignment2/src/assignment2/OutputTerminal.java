@@ -3,18 +3,21 @@ package assignment2;
 import java.awt.Color;
 
 import javax.swing.JLabel;
+import javax.swing.JTextArea;
 /*
  * OutputTerminal is where users questions and the bots answers will be displayed
  */
 
-public class OutputTerminal extends JLabel{
+public class OutputTerminal extends JTextArea{
 	ChatBot chatbot = new ChatBot();
 	
 	public OutputTerminal() {
 		setBackground(Color.white);
-		setOpaque(true);
-		setVerticalAlignment(JLabel.TOP);
-		setText("<html>");
+		setOpaque(false);
+		setLineWrap(true);
+		setEditable(false);
+		setFocusable(false);
+		setText("");
 		
 	}
 	/*
@@ -25,8 +28,8 @@ public class OutputTerminal extends JLabel{
 		if(getText().length() > 6) {
 			setText(getText().substring(0, getText().length()-7));
 		}
-		setText(getText() + "<br> human: " + s);
-		setText(getText() + "<br> Bot: " + response + "<br></html>");
+		setText(getText() + "\n human: " + s);
+		setText(getText() + "\n Bot: " + response + "\n");
 		
 	}
 	
