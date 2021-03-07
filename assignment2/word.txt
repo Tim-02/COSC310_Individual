@@ -1,0 +1,29 @@
+hi
+hello
+sup
+what's up 
+hey
+.Hi, welcome to GymBot! How can I help you?
+time
+timing
+hours
+days
+open
+opened
+openning
+opens
+close
+closed
+closes
+closing
+.Are you interested in working hours? The Gym is open from 5:00 am to 10 pm.
+equipment
+.Our gym include world class equipments personally used by Sylvester Stallone
+new equipment
+.Our cardio section was just updated with new treadmills!
+membership
+.you can register for membership on our website
+discount
+.Check our website for discounts
+owner
+.Our owner is Arnold Schwarzenegger
