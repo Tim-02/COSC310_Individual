@@ -20,10 +20,27 @@ closing
 equipment
 .Our gym include world class equipments personally used by Sylvester Stallone
 new equipment
+equipment new
 .Our cardio section was just updated with new treadmills!
+treadmill
+.We carry a selecion of 20 Sole F80 Model treadmills.
+exercises
+routines
+program
+exercise routine
+.Are you interested in some of our recommended routines? Type "[Body Part] routine" and I will tell you some beginner recommendations! 
 membership
 .you can register for membership on our website
 discount
 .Check our website for discounts
 owner
+owned
+own
+boss
 .Our owner is Arnold Schwarzenegger
+chest routine
+.A beginner routine would consist of push-ups and light dumbbell presses until you can confidently switch to the Bench press.
+leg routine
+.A beginner routine starts with basic body-weight squats and the leg presses. When you are comfortable, you can move up to barbell squats. (And front-squats if you want to perfect your form)
+back routine
+.A beginner routine would begin with low-weight one-arm dumbbell rows. Once you are sufficiently comfortable, you can add in cable rows, assisted pull-ups and heavier dumbbell curls.
