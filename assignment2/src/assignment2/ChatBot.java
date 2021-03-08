@@ -12,18 +12,12 @@ public class ChatBot {
 	
 	//hash map "rules" containing tuples of (keywords, response)
 	//notice that for multiple keywords stored in ArrayList, bot has one response
-	private HashMap<ArrayList<String>, String> rules = new HashMap<ArrayList<String>, String>();
+	private Rule rules;
 	
 	public ChatBot() {
 		//initializing rules with one tuple
 		// TODO: find a better way to get new entries here (maybe from json file?)
-		ArrayList<String> temp = new ArrayList<String>(Arrays.asList("hi", "hello", "sup", "what's up", "hey"));
-		
-		
-		rules.put(temp, "Hi, welcome to GymBot! How can I help you?");
-		
-		temp = new ArrayList<String>(Arrays.asList("time", "timing", "hours", "days", "open", "opened", "openning", "opens", "close", "closed", "closes", "closing"));
-		rules.put(temp, "Are you interested in working hours? The Gym is open from 5:00 am to 10 pm.");
+		rules = new Rule();
 	}
 	
 	 /*
