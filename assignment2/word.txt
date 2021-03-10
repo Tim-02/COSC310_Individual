@@ -43,6 +43,8 @@ boss
 chest routine
 routine chest
 chest
+pec
+pecs
 .A beginner routine would consist of push-ups and light dumbbell presses until you can confidently switch to the Bench press
 leg routine
 routine leg
@@ -65,3 +67,37 @@ routine bicep
 bicep
 biceps
 .Curls are typically very easy for newcomers to jump into. We recommend our beginners and veterans alike start with dumbbell or cable curls.
+tricep routine
+routine tricep
+tricep
+triceps
+.Overhead tricep extensions are a good start to a tricep routine. If you do not feel comfortable with a weight, you can also try bodyweight tricep dips.
+forearms routine
+routine forearms
+forearm
+forearms
+.The simplest starter exercise would be wrist curls using a dumbbell. We also offer several twist gadgets to ease training of forearms.
+shoulder routine
+routine shoulder
+shoulder
+shoulders
+.Dumbell overhead press is a good exercise for beginners. We also have shoulder press machines if you are not confident in your stability.
+traps routine
+routine traps
+trap
+traps
+.Shrugs are very easy to get the hang of. When you advance sufficiently, you can use heavier equipment. Deadlift bars can be useful for shrugs.
+ab routine
+abs routine
+routine ab
+routine abs
+ab
+abs
+.Crunches! They are by far the simplest exercise for beginners to get a head-start on their six-pack. We also offer adjustable incline crunch machines.
+trainer
+trainers
+teacher
+teachers
+instructor
+instructors
+.We have 3 trainers on rotation. You can see their schedules on our website.
