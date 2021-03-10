@@ -9,4 +9,5 @@ This folder will contain all documentations
 7. Project Meeting/meeting documentation
 8. System documentations:   
   a)Class explanation  
-  b)Class hierarchy diagram
+  b)Class hierarchy diagram  
+  c)System limitations
