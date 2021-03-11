@@ -17,6 +17,25 @@ closed
 closes
 closing
 .Are you interested in working hours? The Gym is open from 5:00 am to 10 pm
+help
+.GymBot here. If you have questions about our gym, I'm here to answer them.
+desk
+front desk
+more help
+.We always have an attendant at the entrance of our gym. If you require more in-depth assistance than what I can give, you can go visit them.
+map
+.Visit our website for a detailed map of our locale.
+washroom
+bathroom
+.Both the male and female change-rooms have washrooms.
+men washroom
+washroom men
+.Men's washrooms are located in the men's changing room
+women washroom
+washroom woman
+.Women's washrooms are located in the women's changing room.
+shower
+.Our facilities are equipped with showers. We also sell soap packets at the front desk.
 equipment
 .Our gym includes world class equipment personally used by Sylvester Stallone.
 equipment list
@@ -31,10 +50,17 @@ routines
 program
 exercise routine
 .Are you interested in some of our recommended beginner routines? Type "[Body Part] routine" and I will tell you some recommendations!
+member
+.Anyone over the age of 18 can register for membership. Check out our website for more info.
 membership
-.You can register for membership on our website
+.You can register for membership on our website!
+cost
+membership cost
+cost membership
+.Our basic membership plan is $10.99 monthly. You can see some of our advanced plans on our website.
 discount
-.Check our website for discounts
+deals
+.Check our website for discounts and daily deals!
 owner
 owned
 own
