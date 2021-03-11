@@ -1,5 +1,5 @@
 This folder will contain all documentations  
-# Requied project plan documentations: #  
+# Required project plan documentations: #  
 1. SDLC rationale  
 2. Listing of all phases of SDLC  
 3. WBS  
