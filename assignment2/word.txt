@@ -1,7 +1,7 @@
 hi
 hello
 sup
-what's up 
+what's up
 hey
 .Hi, welcome to GymBot! How can I help you?
 time
@@ -16,31 +16,114 @@ close
 closed
 closes
 closing
-.Are you interested in working hours? The Gym is open from 5:00 am to 10 pm.
+.Are you interested in working hours? The Gym is open from 5:00 am to 10 pm
+help
+.GymBot here. If you have questions about our gym, I'm here to answer them.
+desk
+front desk
+more help
+.We always have an attendant at the entrance of our gym. If you require more in-depth assistance than what I can give, you can go visit them.
+map
+.Visit our website for a detailed map of our locale.
+washroom
+bathroom
+.Both the male and female change-rooms have washrooms.
+men washroom
+washroom men
+.Men's washrooms are located in the men's changing room
+women washroom
+washroom woman
+.Women's washrooms are located in the women's changing room.
+shower
+.Our facilities are equipped with showers. We also sell soap packets at the front desk.
 equipment
-.Our gym include world class equipments personally used by Sylvester Stallone
+.Our gym includes world class equipment personally used by Sylvester Stallone.
+equipment list
+.We have an extensive list on our website available 24/7!
 new equipment
 equipment new
 .Our cardio section was just updated with new treadmills!
 treadmill
-.We carry a selecion of 20 Sole F80 Model treadmills.
+.We carry a selection of 20 Sole F80 Model treadmills
 exercises
 routines
 program
 exercise routine
-.Are you interested in some of our recommended routines? Type "[Body Part] routine" and I will tell you some beginner recommendations! 
+.Are you interested in some of our recommended beginner routines? Type "[Body Part] routine" and I will tell you some recommendations!
+member
+.Anyone over the age of 18 can register for membership. Check out our website for more info.
 membership
-.you can register for membership on our website
+.You can register for membership on our website!
+cost
+membership cost
+cost membership
+.Our basic membership plan is $10.99 monthly. You can see some of our advanced plans on our website.
 discount
-.Check our website for discounts
+deals
+.Check our website for discounts and daily deals!
 owner
 owned
 own
 boss
 .Our owner is Arnold Schwarzenegger
 chest routine
-.A beginner routine would consist of push-ups and light dumbbell presses until you can confidently switch to the Bench press.
+routine chest
+chest
+pec
+pecs
+.A beginner routine would consist of push-ups and light dumbbell presses until you can confidently switch to the Bench press
 leg routine
-.A beginner routine starts with basic body-weight squats and the leg presses. When you are comfortable, you can move up to barbell squats. (And front-squats if you want to perfect your form)
+routine leg
+leg
+legs
+.A beginner routine starts with basic body-weight squats and the leg presses. When you are comfortable, you can move up to barbell squats (And front-squats if you want to perfect your form)
 back routine
-.A beginner routine would begin with low-weight one-arm dumbbell rows. Once you are sufficiently comfortable, you can add in cable rows, assisted pull-ups and heavier dumbbell curls.
+routine back
+back
+.A beginner routine would begin with low-weight one-arm dumbbell rows. Once you are sufficiently comfortable, you can add in cable rows, assisted pull-ups and heavier dumbbell curls
+calf routine
+calves routine
+routine calf
+routine calves
+calf
+calves
+.Calf raises are the easiest exercise for beginners looking to train their calves. We offer calf machines but you can also use our assortment of dumbbells to help you.
+bicep routine
+routine bicep
+bicep
+biceps
+.Curls are typically very easy for newcomers to jump into. We recommend our beginners and veterans alike start with dumbbell or cable curls.
+tricep routine
+routine tricep
+tricep
+triceps
+.Overhead tricep extensions are a good start to a tricep routine. If you do not feel comfortable with a weight, you can also try bodyweight tricep dips.
+forearms routine
+routine forearms
+forearm
+forearms
+.The simplest starter exercise would be wrist curls using a dumbbell. We also offer several twist gadgets to ease training of forearms.
+shoulder routine
+routine shoulder
+shoulder
+shoulders
+.Dumbell overhead press is a good exercise for beginners. We also have shoulder press machines if you are not confident in your stability.
+traps routine
+routine traps
+trap
+traps
+.Shrugs are very easy to get the hang of. When you advance sufficiently, you can use heavier equipment. Deadlift bars can be useful for shrugs.
+ab routine
+abs routine
+routine ab
+routine abs
+ab
+abs
+.Crunches! They are by far the simplest exercise for beginners to get a head-start on their six-pack. We also offer adjustable incline crunch machines.
+trainer
+trainers
+teacher
+teachers
+instructor
+instructors
+.We have 3 trainers on rotation. You can see their schedules on our website.
