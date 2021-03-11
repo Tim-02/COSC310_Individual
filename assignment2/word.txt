@@ -25,26 +25,26 @@ more help
 .We always have an attendant at the entrance of our gym. If you require more in-depth assistance than what I can give, you can go visit them.
 map
 .Visit our website for a detailed map of our locale.
+facilities
+.We have change-rooms catering to both genders. Each also house toilets, sinks and showers.
 washroom
 bathroom
 .Both the male and female change-rooms have washrooms.
-men washroom
-washroom men
-.Men's washrooms are located in the men's changing room
-women washroom
-washroom woman
-.Women's washrooms are located in the women's changing room.
 shower
-.Our facilities are equipped with showers. We also sell soap packets at the front desk.
-equipment
-.Our gym includes world class equipment personally used by Sylvester Stallone.
+showers
+.Located in the change-room. We also sell soap packets at the front desk.
 equipment list
-.We have an extensive list on our website available 24/7!
+.We carry an extensive selection of dumbbells and several of most modern weight training machines. We have a cardio section with twenty different treadmills. If you would like to know more, check out our website.
 new equipment
 equipment new
 .Our cardio section was just updated with new treadmills!
+equipment
+.Our gym includes world class equipment personally used by Sylvester Stallone.
 treadmill
 .We carry a selection of 20 Sole F80 Model treadmills
+dumbbells
+dumbbell
+.Our dumbbell section carries weights from the low half pound all the way to the hundreds. We have copies of each weight so nobody has to wait for others to finish their set!
 exercises
 routines
 program
@@ -57,7 +57,7 @@ membership
 cost
 membership cost
 cost membership
-.Our basic membership plan is $10.99 monthly. You can see some of our advanced plans on our website.
+.Our basic membership plan is $10.99 monthly. You can see some of our advanced plans (and discounts!) on our website.
 discount
 deals
 .Check our website for discounts and daily deals!
