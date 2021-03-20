@@ -39,7 +39,19 @@ public class ChatBot {
         		return rules.get(keywords);
         	}
         }
-        return "sorry I didn't quite get that";   
+        return notUnderstood();   
     }  
+    
+    public String notUnderstood() {
+    	int random = (int) (Math.random() * 5);
+    	String[] responses ={
+    			"Sorry, I didn't quite get that", 
+    			"Sorry, I'm a little confused. Try again?",
+    			"I did not understand your query",
+    			"My apologies, I am not sure what you are trying to ask",
+    			"I don't recognize what you are trying to ask"
+    			};
+		return responses[random];
+    }
 
 }
