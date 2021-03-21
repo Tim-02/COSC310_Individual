@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 //new package imported that allows for Regular Expressions
 import java.util.regex.*;
-import net.sf.extjwnl.dictionary.*;
+import net.didion.jwnl.dictionary.*;
 
 public class ChatBot {
 	
 	//hash map "rules" containing tuples of (keywords, response)
 	//notice that for multiple keywords stored in ArrayList, bot has one response
 	private Rule rules;
-	private DictionaryCatalog d;
+	private Dictionary d;
     	
 	public ChatBot() {
 		//initializing rules with one tuple
