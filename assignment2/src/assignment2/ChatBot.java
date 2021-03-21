@@ -1,22 +1,20 @@
 package assignment2;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
 
 //new package imported that allows for Regular Expressions
 import java.util.regex.*;
+import net.sf.extjwnl.dictionary.*;
 
 public class ChatBot {
 	
 	//hash map "rules" containing tuples of (keywords, response)
 	//notice that for multiple keywords stored in ArrayList, bot has one response
 	private Rule rules;
-	
+	private DictionaryCatalog d;
+    	
 	public ChatBot() {
 		//initializing rules with one tuple
-		// TODO: find a better way to get new entries here (maybe from json file?)
 		rules = new Rule();
 	}
 	
