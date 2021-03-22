@@ -9,13 +9,7 @@ timing
 hours
 days
 open
-opened
-openning
-opens
 close
-closed
-closes
-closing
 .Are you interested in working hours? The Gym is open from 5:00 am to 10:00 pm, all days of the week.
 front desk
 desk

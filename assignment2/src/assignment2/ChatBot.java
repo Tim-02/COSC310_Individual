@@ -13,11 +13,33 @@ public class ChatBot {
 	//hash map "rules" containing tuples of (keywords, response)
 	//notice that for multiple keywords stored in ArrayList, bot has one response
 	private Rule rules;
+	private Stemmer stemmer;
 	
 	public ChatBot() {
 		//initializing rules with one tuple
 		// TODO: find a better way to get new entries here (maybe from json file?)
 		rules = new Rule();
+		stemmer = new Stemmer();	
+	}
+	
+	/*
+	 * takes string and returns same string with stemmed words
+	 */
+	
+	public String stemInput(String input) {
+		//initialize final result
+		String output = "";
+		//Create an array of words from the input string by splitting them by spaces
+		String[] inputArray = input.split("\\s+");
+		//loop through the words in the array
+		for (String word:inputArray) {
+			//add word to the stemmer by character
+			stemmer.add(word.toCharArray(), word.length());
+			stemmer.stem();
+			//add newly stemmed word to the output with a space
+			output += stemmer.toString() + " ";
+		}
+		return getResponse(output);
 	}
 	
 	 /*
