@@ -2,6 +2,8 @@
   <library name="jwnl">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/jwnl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/junit-4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-logging.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
