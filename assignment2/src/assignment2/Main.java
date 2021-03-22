@@ -13,7 +13,7 @@ public class Main {
 		try {
 			JWNL.initialize(new FileInputStream("config/file_properties.xml"));
 			Dictionary d = Dictionary.getInstance();
-			String m = "muscles";
+			String m = "gym";
 			IndexWord i = d.lookupIndexWord(POS.NOUN, m);
 
 			System.out.println("User input: " + m);
