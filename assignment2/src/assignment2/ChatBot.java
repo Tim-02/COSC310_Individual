@@ -15,7 +15,7 @@ public class ChatBot {
 	private Rule rules;
 	private SentimentAnalyzer sentiment;
 	private Stemmer stemmer;
-
+  
 	public ChatBot() {
 		//initializing rules with one tuple
 		// TODO: find a better way to get new entries here (maybe from json file?)
