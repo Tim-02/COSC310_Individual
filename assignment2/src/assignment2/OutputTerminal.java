@@ -24,10 +24,11 @@ public class OutputTerminal extends JTextArea{
 	 * takes in String send it to chat bot then prints both input String and chatBot output in Terminal area
 	 */
 	public void askQuestion(String s) {
-		String response = chatbot.stemInput(s);
-		setText(getText() + "\n human: " + s);
-		setText(getText() + "\n Bot: " + response + "\n");
-		
+		if(s.length() != 0) {
+			String response = chatbot.stemInput(s);
+			setText(getText() + "\n human: " + s);
+			setText(getText() + "\n Bot: " + response + "\n");
+		}
 	}
 	
 
