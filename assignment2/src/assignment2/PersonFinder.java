@@ -62,7 +62,6 @@ public String replaceNameWithPerson(String input, boolean putNameIn) {
 				output += " " + word;
 		}
 	}
-	System.out.println(output);
 	return output;
 }
 
