@@ -19,7 +19,7 @@ public class POSTagger {
          
         try {
             // Tokenize the sentence
-            tokenModelIn = new FileInputStream("./lib/en-token.bin");
+            tokenModelIn = new FileInputStream("./models/en-token.bin");
             
             TokenizerModel tokenModel = new TokenizerModel(tokenModelIn);
             
@@ -29,7 +29,7 @@ public class POSTagger {
  
             // POS Tagging
             // reading POS model to the stream 
-            posModelIn = new FileInputStream("./lib/en-pos-maxent.bin");
+            posModelIn = new FileInputStream("./models/en-pos-maxent.bin");
             
             // loading the POS model from stream
             POSModel posModel = new POSModel(posModelIn);
