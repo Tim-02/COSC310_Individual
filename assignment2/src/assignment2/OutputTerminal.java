@@ -25,7 +25,7 @@ public class OutputTerminal extends JTextArea{
 	 */
 	public void askQuestion(String s) {
 		if(s.length() != 0) {
-			String response = chatbot.stemInput(s);
+			String response = chatbot.getResponse(s);
 			setText(getText() + "\n human: " + s);
 			setText(getText() + "\n Bot: " + response + "\n");
 		}

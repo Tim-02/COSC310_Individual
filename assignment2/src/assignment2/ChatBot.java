@@ -43,7 +43,7 @@ public class ChatBot {
 			//add newly stemmed word to the output with a space
 			output += stemmer.toString() + " ";
 		}
-		return getResponse(output);
+		return output;
 	}
 
 	 /*
@@ -58,6 +58,10 @@ public class ChatBot {
     	}
     	// check to see if a person was mentioned in input 
     	boolean personRefernce = personFinder.findPerson(input);
+    	// if person not metioned stem the input
+    	if(!personRefernce) {
+    		input = stemInput(input);
+    	}
     	// if a person name was metioned replace the input with the new string which changes any name to person
     	input = (personRefernce)? personFinder.getSentence() :input;
         //loop through all possible responses
