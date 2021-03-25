@@ -32,8 +32,10 @@ equipment list
 .We carry an extensive selection of dumbbells and most modern weight training machines. We have a cardio section with twenty different treadmills. If you would like to know more, check out our website.
 new equipment
 equipment new
+new
 .Our cardio section was just updated with new treadmills!
 equipment
+equip
 .Our gym includes world class equipment personally used by Sylvester Stallone.
 treadmill
 .We carry a selection of 20 Sole F80 Model treadmills
@@ -45,7 +47,7 @@ machines
 .We carry most of the modern weight training machines. You can find typical ones like the leg press, shoulder press and all varieties of cable machines.
 exercises
 exercise
-routines
+rout
 program
 .Are you interested in some of our recommended beginner routines? Type "[Body Part] routine" and I will tell you some recommendations!
 member
