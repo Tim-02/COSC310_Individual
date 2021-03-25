@@ -43,10 +43,18 @@ public class POSTagger {
             // Acquire probability of tokens
             double probs[] = posTagger.probs();
              
-            System.out.println("Token\t:\tTag\t:\tProbability\n---------------------------------------------");
+            
+            /*
+            NNP = Proper Noun, Singular
+            VBZ = Verb, 3rd person singular present
+            CD = Cardinal Number
+            NNS = Noun, Plural
+            JJ = Adjective
+            */
             for(int i=0;i<tokens.length;i++){
                 System.out.println(tokens[i]+"\t:\t"+tags[i]+"\t:\t"+probs[i]);
             }
+            
              
         }
         catch (IOException e) {
