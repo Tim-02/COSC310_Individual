@@ -34,7 +34,6 @@ new equip
 equip new
 new
 .Our cardio section was just updated with new treadmills!
-equipment
 equip
 .Our gym includes world class equipment personally used by Sylvester Stallone.
 treadmil
@@ -125,3 +124,13 @@ teachers
 instructor
 instructors
 .We have 3 trainers on rotation. You can see their schedules on our website.
+do you like person
+.I like person .
+do you know person
+.of course i know person .
+where is person
+.At the gym of course.
+is person work
+.if the gym is open person is working. no holidays for the wicked. contact person at person @gmail.com.
+my name is person
+.well nice to finally meet person .
