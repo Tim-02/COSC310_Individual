@@ -1,7 +1,8 @@
 hi
 hello
 sup
-what's up
+what' up
+what up
 hey
 .Hi, welcome to GymBot! How can I help you?
 time
@@ -19,8 +20,7 @@ help
 .GymBot here. If you have questions about our gym, I'm here to answer them.
 map
 .Visit our website for an overview of our locale.
-facilities
-facility
+facil
 .We have change-rooms catering to both genders. Each also house toilets, sinks and showers.
 washroom
 bathroom
@@ -28,22 +28,20 @@ bathroom
 shower
 showers
 .Located in the change-room. We also sell soap packets at the front desk.
-equipment list
+equip list
 .We carry an extensive selection of dumbbells and most modern weight training machines. We have a cardio section with twenty different treadmills. If you would like to know more, check out our website.
-new equipment
-equipment new
+new equip
+equip new
 new
 .Our cardio section was just updated with new treadmills!
 equipment
 equip
 .Our gym includes world class equipment personally used by Sylvester Stallone.
-treadmill
+treadmil
 .We carry a selection of 20 Sole F80 Model treadmills
-dumbbells
-dumbbell
+dumbbel
 .Our dumbbell section carries weights from the low half pound all the way to the hundreds. We have copies of each weight so nobody has to wait for others to finish their set!
-machine
-machines
+machin
 .We carry most of the modern weight training machines. You can find typical ones like the leg press, shoulder press and all varieties of cable machines.
 exercises
 exercise
