@@ -15,6 +15,7 @@ public class ChatBot {
 	private Rule rules;
 	private SentimentAnalyzer sentiment;
 	private Stemmer stemmer;
+	private PersonFinder personFinder;
   
 	public ChatBot() {
 		//initializing rules with one tuple
@@ -22,6 +23,7 @@ public class ChatBot {
 		rules = new Rule();
 		sentiment = new SentimentAnalyzer();
 		stemmer = new Stemmer();
+		personFinder = new PersonFinder();
 	}
 
 	/*
@@ -41,19 +43,27 @@ public class ChatBot {
 			//add newly stemmed word to the output with a space
 			output += stemmer.toString() + " ";
 		}
-		return getResponse(output);
+		return output;
 	}
 
 	 /*
      * takes String outputs "intelligent" answer
      */
     public String getResponse(String input){
-    	String[] words = input.split(" ");
+    	
+    	String[] words = input.split("\\s+");
     	// if first sentence in sentence is addressing bot
     	if(words[0].equals("you")) {
     		return addressFeedback(input);
     	}
-
+    	// check to see if a person was mentioned in input 
+    	boolean personRefernce = personFinder.findPerson(input);
+    	// if person not metioned stem the input
+    	if(!personRefernce) {
+    		input = stemInput(input);
+    	}
+    	// if a person name was metioned replace the input with the new string which changes any name to person
+    	input = (personRefernce)? personFinder.getSentence() :input;
         //loop through all possible responses
         for(ArrayList<String> keywords : rules.keySet()) {
         	//build a keyword pattern for each response (regex standard)
@@ -66,6 +76,10 @@ public class ChatBot {
 
         	while(matcher.find()) {
         		//if match found, return respective response from rules
+        		// if person Refernce is true then replace word person from output with the proper name
+        		if(personRefernce) {
+        			return personFinder.replaceNameWithPerson(rules.get(keywords), true);
+        		}
         		return rules.get(keywords);
         	}
         }
