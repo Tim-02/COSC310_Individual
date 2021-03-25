@@ -13,6 +13,7 @@ This folder will contain all documentations
     c)System limitations  
 9. Level 0 Data Flow Diagram (Explanation Within ReadMe)
 10. Level 1 Data Flow Diagram  (Explanation Within ReadMe)
+11. Explanation of Additions in Assignment 3
 # Level 0 Data Flow Diagram #
 
 ![alt text](https://github.com/COSC310-Project-Group-8/AssignmentTwo/blob/main/Documentations/Level%200%20Data%20Flow%20Diagram.png?raw=true)
@@ -26,6 +27,40 @@ The input is taken in from the user through the GUI and is then broken up into P
 This dataflow diagram shows a detailed view of how data is passed through the program at a class level. This diagram also uses verb phrases for processes and nouns for data and data sources, but it also identifies the class in which each process is performed in bolded text. Processes are grouped together based on each class to aid clarity, with the exception of the two uses of the PersonFinder class as one of them is reliant on the returned value of the other.
 
 The User gives input through the GUI which is facilitated by the Contents Class and this input is then passed on to the OutputTerminal Class. The input is passed on to the POSTagger Class as well as the Chatbot Class. The POSTagger class retrieves the sentence tokens and parts of speech from the .bin files within the models folder, breaks up and identifies the parts of speech of the input and then prints these parts of speech to the console. The Chatbot class takes the input from the OutputTerminal Class and uses four different classes in it's analysis and production of a response. Firstly the input is passed to the SentimentAnalyzer Class if the phrase begins with "you" and returns a sentimental response based on the degree of sentiment. Next the input is passed to the PersonFinder Class and a boolean determining whether a name is present in the input is returned. Next if the PersonFinder Class was unable to find a name, the input is passed to the Stemmer Class where each word of the input is broken into their roots to aid analysis. If the PersonFinder class did find a name, then the input is passed to the PersonFinder class again and the name is used in a response format that is returned. Finally, the Rules Class retrieves the list of keywords and phrases from the word.txt file and passes this list to the Chatbot Class. If none of the previous classes have produced a response and a response can't be chosen from the list based on the topic keywords, then the Chatbot class will randomly pick one of five canned responses. The response is then returned to the OutputTerminal Class where both the input and response are printed on the GUI for the User to see.
+
+# List of Features Added
+
+1. Simple GUI
+
+   A simple interface allowed for our chat bot to look cleaner and be more usable.
+
+   ![alt text](https://github.com/COSC310-Project-Group-8/AssignmentTwo/blob/main/Documentations/feature1.png?raw=true)
+
+2. 5 Reasonable Responses for Inputs Outside of Topic
+
+   If no response can be made organically, there are 5 canned responses that will be used.
+
+   ![alt text](https://github.com/COSC310-Project-Group-8/AssignmentTwo/blob/main/Documentations/feature2.png?raw=true)
+
+3. Spelling Mistakes (Porter Stemmer)
+
+   The Porter Stemmer algorithm allowed us to turn words in the user input into their roots to resolve issues with users using words with slightly different endings or minor spelling mistakes. In this example, only "program" and "discount" are hard coded key words that can be recognized, but our implementation of the Porter Stemmer algorithm removes the suffixes as well as the extra "m" so that "programing", "programming" and "discounted" can be recognized and trigger the proper response.
+
+   ![alt text](https://github.com/COSC310-Project-Group-8/AssignmentTwo/blob/main/Documentations/feature3.png?raw=true)
+
+4. Name Entity Recognition (OpenNLP)
+
+   Our implementation of name recognition allows the bot to recognize a name within the input (only one name at a time though) and use that name in a response based on the rest of the input.
+
+   ![alt text](https://github.com/COSC310-Project-Group-8/AssignmentTwo/blob/main/Documentations/feature4.png?raw=true)
+
+5. Sentimental Analysis
+
+   Our implementation of the Stanford Tool Kit allowed us to use sentimental analysis, where if an input to the bot begins with "you" it is recognized as a sentimental statement, and is then judged on a scale of being very friendly/nice to very rude/mean based on key words and phrases and returns one of five responses based on where it lies on this scale.
+
+   ![alt text](https://github.com/COSC310-Project-Group-8/AssignmentTwo/blob/main/Documentations/feature5.png?raw=true)
+
+
 
 # Overall Class Structure (Assignment 2): #
 
