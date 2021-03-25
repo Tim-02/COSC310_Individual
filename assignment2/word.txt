@@ -28,10 +28,12 @@ bathroom
 shower
 showers
 .Located in the change-room. We also sell soap packets at the front desk.
-equip list
+equip list 
+list equip 
+list
 .We carry an extensive selection of dumbbells and most modern weight training machines. We have a cardio section with twenty different treadmills. If you would like to know more, check out our website.
-new equip
-equip new
+new equip 
+equip new 
 new
 .Our cardio section was just updated with new treadmills!
 equip
