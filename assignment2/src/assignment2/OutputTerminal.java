@@ -27,6 +27,7 @@ public class OutputTerminal extends JTextArea{
 		String response = chatbot.stemInput(s);
 		setText(getText() + "\n human: " + s);
 		setText(getText() + "\n Bot: " + response + "\n");
+		POSTagger.checkUserInput(s);
 		
 	}
 	
