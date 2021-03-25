@@ -10,7 +10,7 @@ import javax.swing.JTextArea;
 
 public class OutputTerminal extends JTextArea{
 	ChatBot chatbot = new ChatBot();
-	
+
 	public OutputTerminal() {
 		setBackground(Color.white);
 		setOpaque(false);
@@ -18,7 +18,7 @@ public class OutputTerminal extends JTextArea{
 		setEditable(false);
 		setFocusable(false);
 		setText("");
-		
+
 	}
 	/*
 	 * takes in String send it to chat bot then prints both input String and chatBot output in Terminal area
@@ -28,6 +28,7 @@ public class OutputTerminal extends JTextArea{
 			String response = chatbot.getResponse(s);
 			setText(getText() + "\n human: " + s);
 			setText(getText() + "\n Bot: " + response + "\n");
+			POSTagger.checkUserInput(s);
 		}
 	}
 	
