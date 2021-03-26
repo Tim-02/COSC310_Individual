@@ -93,6 +93,8 @@ The User gives input through the GUI which is facilitated by the Contents Class 
 1. The Graphical User Interface (The Window, Output Terminal and Contents Classes)
 2. The ability to read keywords and phrases from a .txt file (Rules Class)
 3. The canned responses for inputs outside of topic (Found in ChatBot Class in the notUnderstood() method)
+4. Address Feedback (Using Sentiment Classes analyze() method, found within ChatBot Class in the addressFeedback() method)
+5. Create New Sentence out of Stemmed Input (Using the Stemmer class, found within ChatBot Class in the stemInput() Method)
 
 # Overall Class Structure (Assignment 2): #
 
