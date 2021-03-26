@@ -73,7 +73,12 @@ The User gives input through the GUI which is facilitated by the Contents Class 
 # Limitations and Examples
 
 1. Only one name can be recognized at a time
+
+   ![alt text](https://github.com/COSC310-Project-Group-8/AssignmentTwo/blob/main/Documentations/Limitations%20(1).png?raw=true)
+
 2. Synonyms are not able to be recognized and can lead to the wrong response
+
+   ![alt text](https://github.com/COSC310-Project-Group-8/AssignmentTwo/blob/main/Documentations/Limitations%20(2).png?raw=true)
 
 # Overall Class Structure (Assignment 2): #
 
