@@ -1,5 +1,7 @@
-This folder will contain all documentations  
+This folder will contain all documentations. All documentation requirements for Assignment 3 are within this ReadMe.
 # Required project plan documentations: #  
+(Assignment 2)
+
 1. SDLC rationale  
 2. Listing of all phases of SDLC  
 3. WBS  
@@ -8,12 +10,18 @@ This folder will contain all documentations
 6. Hour estimation/actuals
 7. Project Meeting/meeting documentation
 8. System documentations:   
-    a)Class explanation  
-    b)Class hierarchy diagram  
-    c)System limitations  
+   a)Class explanation  
+   b)Class hierarchy diagram  
+   c)System limitations  
+
+(Assignment 3)
+
 9. Level 0 Data Flow Diagram (Explanation Within ReadMe)
 10. Level 1 Data Flow Diagram  (Explanation Within ReadMe)
 11. Explanation of Additions in Assignment 3
+4. 30 Rounds of Dialogue
+5. Limitations with Examples
+6. 5 Features that Could b extracted and shared with others as an API
 # Level 0 Data Flow Diagram #
 
 ![alt text](https://github.com/COSC310-Project-Group-8/AssignmentTwo/blob/main/Documentations/Level%200%20Data%20Flow%20Diagram.png?raw=true)
@@ -79,6 +87,12 @@ The User gives input through the GUI which is facilitated by the Contents Class 
 2. Synonyms are not able to be recognized and can lead to the wrong response
 
    ![alt text](https://github.com/COSC310-Project-Group-8/AssignmentTwo/blob/main/Documentations/Limitations%20(2).png?raw=true)
+
+# Features that could be shared with others
+
+1. The Graphical User Interface (The Window, Output Terminal and Contents Classes)
+2. The ability to read keywords and phrases from a .txt file (Rules Class)
+3. The canned responses for inputs outside of topic (Found in ChatBot Class in the notUnderstood() method)
 
 # Overall Class Structure (Assignment 2): #
 
