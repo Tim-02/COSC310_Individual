@@ -60,6 +60,8 @@ The User gives input through the GUI which is facilitated by the Contents Class 
 
    ![alt text](https://github.com/COSC310-Project-Group-8/AssignmentTwo/blob/main/Documentations/feature5.png?raw=true)
 
+# 30 Rounds of Dialogue
+
 
 
 # Overall Class Structure (Assignment 2): #
