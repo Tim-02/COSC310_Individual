@@ -72,7 +72,8 @@ The User gives input through the GUI which is facilitated by the Contents Class 
 
 # Limitations and Examples
 
-
+1. Only one name can be recognized at a time
+2. Synonyms are not able to be recognized and can lead to the wrong response
 
 # Overall Class Structure (Assignment 2): #
 
