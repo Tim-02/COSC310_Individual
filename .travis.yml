@@ -7,7 +7,7 @@ jdk:
 script:
   - cd assignment2
   - mvn install -Dmaven.javadoc.skip=true -B -V
-  - mvn test
+  - mvn clean verify
 
 branches:
   only:
