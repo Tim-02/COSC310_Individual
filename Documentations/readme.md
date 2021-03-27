@@ -100,3 +100,20 @@ The User gives input through the GUI which is facilitated by the Contents Class 
 
 ![alt text](https://github.com/COSC310-Project-Group-8/AssignmentTwo/blob/main/Documentations/UML%20(1).png?raw=true)
 
+# Automated Unit Testing
+
+![alt text](https://github.com/COSC310-Project-Group-8/AssignmentTwo/blob/testing/Documentations/JUnit%20TestCases.png?raw=true)
+
+Unit tests were performed using JUnit 4. Class [TestChatBot.class](../assignment2/src/assignment2/TestChatBot.java) contains all the unit tests.
+These cases are testing some major classes and their methods that constitute our ChatBot:
+- testAnalyzeSentiment: to check if bot correctly identifies different emotional input
+- testNotUnderstood: to check if premade "not understood" phrases are returned correctly
+- testFindPerson: to check if bot successfully recognizes names
+- testStemInput: to check if words are correctly stemmed
+
+![alt text](https://github.com/COSC310-Project-Group-8/AssignmentTwo/blob/testing/Documentations/Travis%20CI%20Automated%20Testing.png?raw=true)
+
+We successfully configured our project for continuous integration.
+- Every commit that was made in testing branch automatically triggers the build/testing
+- Travis CI uses [.travis.yml](../.travis.yml) file to recognize the configuration
+- Some of the jobs were not successful since implementing JUnit in Maven is a bit more complex than pure JUnit, but Travis CI definitely verifies and builds our project
