@@ -2,9 +2,6 @@ package assignment2;
 
 import static org.junit.Assert.*;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -12,11 +9,13 @@ public class TestChatBot {
 	
 	static ChatBot bot;
 	static SentimentAnalyzer sentiment;
+	static PersonFinder pf;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		bot = new ChatBot();
 		sentiment = new SentimentAnalyzer();
+		pf = new PersonFinder();
 	}
 
 	@Test
@@ -52,6 +51,14 @@ public class TestChatBot {
 				success = true;
 		
 		assertTrue(success);
+	}
+	
+	@Test
+	public void testFindPerson() {
+		pf.findPerson("Hey, where can I find John?");
+		assertEquals("John", pf.getName());
+		pf.findPerson("Is Jill around?");
+		assertEquals("Jill", pf.getName());
 	}
 
 }
