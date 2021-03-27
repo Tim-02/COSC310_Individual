@@ -22,6 +22,7 @@ This folder will contain all documentations. All documentation requirements for 
 4. 30 Rounds of Dialogue
 5. Limitations with Examples
 6. 5 Features that Could b extracted and shared with others as an API
+7. Automated Unit Testing
 # Level 0 Data Flow Diagram #
 
 ![alt text](https://github.com/COSC310-Project-Group-8/AssignmentTwo/blob/main/Documentations/Level%200%20Data%20Flow%20Diagram.png?raw=true)
@@ -102,7 +103,7 @@ The User gives input through the GUI which is facilitated by the Contents Class 
 
 # Automated Unit Testing
 
-![alt text](https://github.com/COSC310-Project-Group-8/AssignmentTwo/blob/testing/Documentations/JUnit%20TestCases.png?raw=true)
+![alt text](https://github.com/COSC310-Project-Group-8/AssignmentTwo/blob/main/Documentations/JUnit%20TestCases.png?raw=true)
 
 Unit tests were performed using JUnit 4. Class [TestChatBot.class](../assignment2/src/assignment2/TestChatBot.java) contains all the unit tests.
 These cases are testing some major classes and their methods that constitute our ChatBot:
@@ -111,7 +112,7 @@ These cases are testing some major classes and their methods that constitute our
 - testFindPerson: to check if bot successfully recognizes names
 - testStemInput: to check if words are correctly stemmed
 
-![alt text](https://github.com/COSC310-Project-Group-8/AssignmentTwo/blob/testing/Documentations/Travis%20CI%20Automated%20Testing.png?raw=true)
+![alt text](https://github.com/COSC310-Project-Group-8/AssignmentTwo/blob/main/Documentations/Travis%20CI%20Automated%20Testing.png?raw=true)
 
 We successfully configured our project for continuous integration.
 - Every commit that was made in testing branch automatically triggers the build/testing
