@@ -1,5 +1,9 @@
 package assignment2;
 
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -53,17 +57,17 @@ public class ChatBot {
     	
     	String[] words = input.split("\\s+");
     	// if first sentence in sentence is addressing bot
-    	if(words[0].equals("you")) {
+    	if(words[0].equalsIgnoreCase("you")) {
     		return addressFeedback(input);
     	}
-    	// check to see if a person was mentioned in input 
-    	boolean personRefernce = personFinder.findPerson(input);
-    	// if person not metioned stem the input
-    	if(!personRefernce) {
-    		input = stemInput(input);
-    	}
-    	// if a person name was metioned replace the input with the new string which changes any name to person
-    	input = (personRefernce)? personFinder.getSentence() :input;
+		// check to see if a person was mentioned in input
+		boolean personRefernce = personFinder.findPerson(input);
+		// if person not metioned stem the input
+		if(!personRefernce) {
+			input = stemInput(input);
+		}
+		// if a person name was metioned replace the input with the new string which changes any name to person
+		input = (personRefernce)? personFinder.getSentence() :input;
         //loop through all possible responses
         for(ArrayList<String> keywords : rules.keySet()) {
         	//build a keyword pattern for each response (regex standard)
@@ -83,6 +87,16 @@ public class ChatBot {
         		return rules.get(keywords);
         	}
         }
+
+        //if no keywords found, chatbot will query any nouns it finds in wikipedia
+        String noun = POSTagger.findNoun(input);
+        String wikiResponse;
+        if(noun!=null)
+        	if((wikiResponse=wikiQuery(noun))!=null)
+        		return "I didn't quite get that, but here is what I know: " + wikiResponse;
+
+
+        //if no nouns found then it uses default answers
         return notUnderstood();
     }
 
@@ -97,6 +111,7 @@ public class ChatBot {
     			};
 		return responses[random];
     }
+
     // takes a string addressing the bot specificly and outputs will display apropriate response
     public String addressFeedback(String input) {
 
@@ -114,8 +129,36 @@ public class ChatBot {
     		return "That is the nicest thing anyone has ever said to me <3";
     	}
     	return "this should never be called";
-
-
     }
 
+    //method that makes query to wiki API using noun from user
+    public String wikiQuery(String noun){
+    	APICommunicator api = new APICommunicator();
+    	JSONObject JSONpointer;
+    	String url = "https://en.wikipedia.org/w/api.php?action=query&format=json&" +
+				"prop=extracts&explaintext=true&exsentences=3&titles=";
+		String body = api.getAt(url + noun);
+		String response = null;
+
+
+		try {
+			//create a json object based on string received from API
+			JSONpointer = (JSONObject) new JSONParser().parse(body);
+
+			//access inside JSON string to reach pageID
+			JSONpointer = (JSONObject) JSONpointer.get("query");
+			JSONpointer = (JSONObject) JSONpointer.get("pages");
+			String pageid = (String) JSONpointer.keySet().iterator().next();
+
+			if(!pageid.equals("-1")) {
+				JSONpointer = (JSONObject) JSONpointer.get(pageid);
+				response = (String) JSONpointer.get("extract");
+			}
+
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+
+		return response;
+	}
 }
