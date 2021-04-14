@@ -118,7 +118,8 @@ public class POSTagger {
             JJ = Adjective
             */
             for(int i=0;i<tokens.length;i++){
-                if(tags[i].equals("NN") && probs[i]>0.75) {
+                System.out.println(tokens[i] + ", " + tags[i] + ", " + probs[i]);
+                if((tags[i].equals("NN")||tags[i].equals("NNS")) && probs[i]>0.65) {
                     return tokens[i];
                 }
             }

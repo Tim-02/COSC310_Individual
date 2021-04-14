@@ -1,13 +1,11 @@
 package assignment2;
 
 import java.awt.Color;
-
-import javax.swing.JLabel;
 import javax.swing.JTextArea;
+
 /*
  * OutputTerminal is where users questions and the bots answers will be displayed
  */
-
 public class OutputTerminal extends JTextArea{
 	ChatBot chatbot = new ChatBot();
 
@@ -15,6 +13,7 @@ public class OutputTerminal extends JTextArea{
 		setBackground(Color.white);
 		setOpaque(false);
 		setLineWrap(true);
+		setWrapStyleWord(true);
 		setEditable(false);
 		setFocusable(false);
 		setText("");
@@ -26,7 +25,7 @@ public class OutputTerminal extends JTextArea{
 	public void askQuestion(String s) {
 		if(s.length() != 0) {
 			String response = chatbot.getResponse(s);
-			setText(getText() + "\n human: " + s);
+			setText(getText() + "\n Human: " + s);
 			setText(getText() + "\n Bot: " + response + "\n");
 		}
 	}

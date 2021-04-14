@@ -4,10 +4,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.*;
 
 //new package imported that allows for Regular Expressions
 import java.util.regex.*;
@@ -54,7 +51,10 @@ public class ChatBot {
      * takes String outputs "intelligent" answer
      */
     public String getResponse(String input){
-    	
+
+    	// get input to lowercase
+		input = input.toLowerCase();
+
     	String[] words = input.split("\\s+");
     	// if first sentence in sentence is addressing bot
     	if(words[0].equalsIgnoreCase("you")) {
@@ -62,10 +62,7 @@ public class ChatBot {
     	}
 		// check to see if a person was mentioned in input
 		boolean personRefernce = personFinder.findPerson(input);
-		// if person not metioned stem the input
-		if(!personRefernce) {
-			input = stemInput(input);
-		}
+
 		// if a person name was metioned replace the input with the new string which changes any name to person
 		input = (personRefernce)? personFinder.getSentence() :input;
         //loop through all possible responses
@@ -88,13 +85,16 @@ public class ChatBot {
         	}
         }
 
-        //if no keywords found, chatbot will query any nouns it finds in wikipedia
-        String noun = POSTagger.findNoun(input);
-        String wikiResponse;
-        if(noun!=null)
-        	if((wikiResponse=wikiQuery(noun))!=null)
-        		return "I didn't quite get that, but here is what I know: " + wikiResponse;
 
+        String noun = POSTagger.findNoun(input);
+        if(noun!=null) {
+			//if no keywords found, chatbot will query any nouns it finds in wikipedia
+			String wikiResponse;
+			if ((wikiResponse = wikiQuery(noun)) != null)
+				return "I didn't quite get that, but here is what I know: " + wikiResponse;
+		}
+
+		ImagePopup.popImage("./test.jpg");
 
         //if no nouns found then it uses default answers
         return notUnderstood();
@@ -136,7 +136,7 @@ public class ChatBot {
     	APICommunicator api = new APICommunicator();
     	JSONObject JSONpointer;
     	String url = "https://en.wikipedia.org/w/api.php?action=query&format=json&" +
-				"prop=extracts&explaintext=true&exsentences=3&titles=";
+				"prop=extracts&explaintext=true&exsentences=1&titles=";
 		String body = api.getAt(url + noun);
 		String response = null;
 

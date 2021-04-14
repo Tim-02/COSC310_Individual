@@ -15,7 +15,6 @@ import javax.swing.border.Border;
  * everything displayed on Screen is within contents
  * constructor takes width and height
  */
-
 public class Contents extends JLabel{
 	public Contents(int w, int h) {
 		
