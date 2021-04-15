@@ -43,8 +43,20 @@ public class Contents extends JLabel{
 		
 		JButton button = new JButton("ASK!");
 		button.addActionListener(e -> {
-			output.askQuestion(input.getText());
-			input.setText("");
+			//check if user received an image from flickr
+			if(output.chatbot.imgIsNull()) {
+				output.askQuestion(input.getText());
+				input.setText("");
+			}
+			else{
+				//get image URL and title to show it to user
+				String imgURL = output.chatbot.getImg().getURL();
+				String title = output.chatbot.getImg().getTitle();
+				ImagePopup.popImage(imgURL, title);
+
+				//set to null after it's shown
+				output.chatbot.setImg(null);
+			}
 		});
 		button.setFont(f);
 		button.setSize(100, 100);

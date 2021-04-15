@@ -1,5 +1,6 @@
 package assignment2;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -17,14 +18,14 @@ public class ChatBot {
 	private SentimentAnalyzer sentiment;
 	private Stemmer stemmer;
 	private PersonFinder personFinder;
+	private FlickrImage img;
   
 	public ChatBot() {
-		//initializing rules with one tuple
-		// TODO: find a better way to get new entries here (maybe from json file?)
 		rules = new Rule();
 		sentiment = new SentimentAnalyzer();
 		stemmer = new Stemmer();
 		personFinder = new PersonFinder();
+		setImg(null);
 	}
 
 	/*
@@ -85,16 +86,21 @@ public class ChatBot {
         	}
         }
 
-
         String noun = POSTagger.findNoun(input);
         if(noun!=null) {
+        	FlickrImage flickrResponse = flickrQuery(noun);
+        	if(flickrResponse!=null) {
+        		img = flickrResponse;
+				return "Not quite sure, but I found a photo by @"
+						+ flickrResponse.getUserName()
+						+ " check this out!\n[press ASK to continue]";
+			}
+
 			//if no keywords found, chatbot will query any nouns it finds in wikipedia
-			String wikiResponse;
-			if ((wikiResponse = wikiQuery(noun)) != null)
+			String wikiResponse = wikiQuery(noun);
+			if (wikiResponse!=null && !wikiResponse.isEmpty())
 				return "I didn't quite get that, but here is what I know: " + wikiResponse;
 		}
-
-		ImagePopup.popImage("./test.jpg");
 
         //if no nouns found then it uses default answers
         return notUnderstood();
@@ -133,17 +139,23 @@ public class ChatBot {
 
     //method that makes query to wiki API using noun from user
     public String wikiQuery(String noun){
-    	APICommunicator api = new APICommunicator();
-    	JSONObject JSONpointer;
-    	String url = "https://en.wikipedia.org/w/api.php?action=query&format=json&" +
-				"prop=extracts&explaintext=true&exsentences=1&titles=";
-		String body = api.getAt(url + noun);
+		//Link to API request, "titles" must be set to article title
+		String url = "https://en.wikipedia.org/w/api.php?" +
+				"action=query" +
+				"&format=json" +
+				"&prop=extracts" +
+				"&explaintext=true" +
+				"&exsentences=1" +
+				"&titles=";
 		String response = null;
 
+		//Opens API communicator that makes HTTP requests
+    	APICommunicator api = new APICommunicator();
+		String body = api.getAt(url + noun);
 
 		try {
 			//create a json object based on string received from API
-			JSONpointer = (JSONObject) new JSONParser().parse(body);
+			JSONObject JSONpointer = (JSONObject) new JSONParser().parse(body);
 
 			//access inside JSON string to reach pageID
 			JSONpointer = (JSONObject) JSONpointer.get("query");
@@ -160,5 +172,57 @@ public class ChatBot {
 		}
 
 		return response;
+	}
+
+	//method that makes query to Flickr to find an image url based on keyword noun
+	public FlickrImage flickrQuery(String noun){
+		FlickrImage photo = null;
+    	String url =  "https://www.flickr.com/services/rest/?" +
+				"method=flickr.photos.search" +
+				"&api_key=efb2cfcd339c6a9abc7dea3acafa4f37" +
+				"&safe_search=1" +
+				"&per_page=1" +
+				"&format=json" +
+				"&nojsoncallback=1" +
+				"&tags=";
+    	String photoURL = null;
+    	//opens API communicator that makes HTTP requests
+    	APICommunicator api = new APICommunicator();
+    	String body = api.getAt(url + noun);
+
+		try {
+			//create a json object based on string received from API
+			JSONObject JSONpointer = (JSONObject) new JSONParser().parse(body);
+
+			//traverse through object to reach photo information
+			JSONpointer = (JSONObject) JSONpointer.get("photos");
+			JSONArray temp = (JSONArray) JSONpointer.get("photo");
+			JSONpointer = (JSONObject) temp.get(0);
+
+			String photoID = (String) JSONpointer.get("id");
+			String serverID = (String) JSONpointer.get("server");
+			String secretID = (String) JSONpointer.get("secret");
+			String ownerID = (String) JSONpointer.get("owner");
+			String title = (String) JSONpointer.get("title");
+
+			photo = new FlickrImage(photoID, secretID, serverID, ownerID, title);
+
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+
+		return photo;
+	}
+
+	public FlickrImage getImg() {
+		return img;
+	}
+
+	public void setImg(FlickrImage img) {
+		this.img = img;
+	}
+
+	public boolean imgIsNull() {
+    	return (img==null);
 	}
 }
