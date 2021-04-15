@@ -1,3 +1,63 @@
+# Additional documentation for Individual Project
+Here I added some information about the project that repeats the report submitted on Canvas.
+
+### Short description:
+In this project I added two more APIs to make interactions with ChatBot more interesting. Instead of returning default responses like "I didn't quite get that" now it can query public APIs for useful information.
+
+## APIs:
+-	Wikipedia API
+-	Flickr API
+
+For both of them there is a 50/50 chance to trigger if a noun is found in user input.
+
+### Wikipedia API:
+Link: [https://en.wikipedia.org/w/api.php](https://en.wikipedia.org/w/api.php)
+
+When the chatbot can’t find a keyword in predefined Rules dictionary, it informs user about it and tries to process the input for any nouns using POSTagger implemented earlier. If a noun is found with high probability, it is used as a Wikipedia query, to find an article with similar title. Public Wikipedia API doesn’t require any authentication, which means no OAuth or API key was needed.
+
+If an article with similar name is found, chatbot prints first 2 sentences of the intro (beginning of the article).
+Here is what “Cat” article looks like:
+
+![wiki_cat](Wikipedia_Cat.png)
+ 
+Here is how the chat bot can respond if it doesn’t understand the request:
+
+![api_cat](WikipediaAPI_Cat.png)
+ 
+
+**Limitations:**
+-	Gets confused with Disambiguation pages since they don’t always have intro.
+-	Doesn’t work with phrases or other parts of speech.
+-	Doesn't work with plural of nouns.
+
+### Flickr API:
+Link: [https://www.flickr.com/services/api/](https://www.flickr.com/services/api/)
+
+Another way chat bot can respond in a similar situation is to provide random photo based on the extracted noun. The app searches through public photos to find anything with related tags. This kind of search doesn’t require OAuth, but it needs API Key that I requested on the website. It takes full information about an image, such as ID, secret ID, owner ID, and title. Then it is translated to working URL, that can be accessed by ImageIO. I also used ownerID to find username to keep some sort of attribution. If Flickr API fails to find an image, then Wiki API is used instead.
+
+Here is what searching through “dog” tag looks like on Flickr:
+
+![flickr_dog](Flickr_Dog.png)
+
+Here is how it is implemented in the chat bot:
+
+![api_dog1](FlickrAPI_Dog1.png)
+![api_dog2](FlickrAPI_Dog2.png)
+
+
+## Additional classes:
+- [APICommunicator](../assignment2/src/assignment2/APICommunicator.java)
+   - Creates HTTP request to given URL and return body of the response as String.
+   - Used in both Flickr and Wikipedia API.
+- [FlickrImage](../assignment2/src/assignment2/FlickrImage.java)
+   - A container for all needed information about a single image.
+   - Can make additional request to find username and compile a URL.
+- [ImagePopup](../assignment2/src/assignment2/ImagePopup.java)
+   - Creates a new JFrame with image in its full size.
+   - Takes image URL and title as parameters.
+
+Below is the initial documentation for the group project.
+
 This folder will contain all documentations. All documentation requirements for Assignment 3 are within this ReadMe.
 # Required project plan documentations: #  
 (Assignment 2)
