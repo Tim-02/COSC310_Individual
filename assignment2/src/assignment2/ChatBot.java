@@ -86,20 +86,32 @@ public class ChatBot {
         	}
         }
 
-        String noun = POSTagger.findNoun(input);
-        if(noun!=null) {
-        	FlickrImage flickrResponse = flickrQuery(noun);
-        	if(flickrResponse!=null) {
-        		img = flickrResponse;
-				return "Not quite sure, but I found a photo by @"
-						+ flickrResponse.getUserName()
-						+ " check this out!\n[press ASK to continue]";
-			}
+        /*
+         * If no keywords found, check for nouns and show either:
+         *  - Wikipedia extract of related word
+         *  - Flickr image of related word
+         */
+		String noun = POSTagger.findNoun(input);
+		if(noun!=null) {
+			switch((int)Math.round(Math.random())) {
+				case 0:
+					//chatbot will query first noun it finds on flickr
+					FlickrImage flickrResponse = flickrQuery(noun);
+					if (flickrResponse != null) {
+						img = flickrResponse;
+						return "Not quite sure, but I found a picture of "
+								+ noun
+								+ " by @"
+								+ flickrResponse.getUserName()
+								+ ", check this out!\n[press ASK to continue]";
+					}
 
-			//if no keywords found, chatbot will query any nouns it finds in wikipedia
-			String wikiResponse = wikiQuery(noun);
-			if (wikiResponse!=null && !wikiResponse.isEmpty())
-				return "I didn't quite get that, but here is what I know: " + wikiResponse;
+				case 1:
+					//chatbot will query first noun it finds in wikipedia
+					String wikiResponse = wikiQuery(noun);
+					if (wikiResponse != null && !wikiResponse.isEmpty())
+						return "I didn't quite get that, but here is what I know about " + noun + ": " + wikiResponse;
+			}
 		}
 
         //if no nouns found then it uses default answers
@@ -145,7 +157,7 @@ public class ChatBot {
 				"&format=json" +
 				"&prop=extracts" +
 				"&explaintext=true" +
-				"&exsentences=1" +
+				"&exsentences=2" +
 				"&titles=";
 		String response = null;
 
