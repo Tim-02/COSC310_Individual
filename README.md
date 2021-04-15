@@ -10,7 +10,7 @@ In this project I added two more APIs to make interactions with ChatBot more int
 
 ## Updated documentation
 
-I added more diagrams to [Documentation](./Documentation) folder, as well as updated the Readme file inside.
+I added more diagrams to [Documentation](./Documentations) folder, as well as updated the Readme file inside.
 Just to be safe I have similar information in PDF submitted to Canvas.
 
 Below you can find initial README information of the group project.
