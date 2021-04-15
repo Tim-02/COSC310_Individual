@@ -3,7 +3,9 @@ package assignment2;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
- 
+import java.util.ArrayList;
+import java.util.Collections;
+
 import opennlp.tools.postag.POSModel;
 import opennlp.tools.postag.POSTaggerME;
 import opennlp.tools.tokenize.Tokenizer;
@@ -117,13 +119,22 @@ public class POSTagger {
             NNS = Noun, Plural
             JJ = Adjective
             */
+
+            //very ugly implementation to find most probable noun
+            int maxIndex = -1;
             for(int i=0;i<tokens.length;i++){
                 System.out.println(tokens[i] + ", " + tags[i] + ", " + probs[i]);
-                if((tags[i].equals("NN")||tags[i].equals("NNS")) && probs[i]>0.65) {
-                    return tokens[i];
+                if(tags[i].equals("NN")) {
+                    if(maxIndex==-1)
+                        maxIndex = i;
+                    else if(probs[maxIndex]<probs[i])
+                        maxIndex = i;
                 }
             }
-
+            if(maxIndex==-1)
+                return null;
+            else
+                return tokens[maxIndex];
         }
         catch (IOException e) {
             e.printStackTrace();
